@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { login, signup } from './actions'
+import Link from 'next/link'
 import { Hexagon } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -17,12 +18,12 @@ export default function LoginPage({
       <div className="w-full max-w-md animate-in fade-in zoom-in-95 duration-500">
         
         <div className="flex justify-center mb-8">
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center text-white">
+          <Link href="/" className="flex items-center gap-2 group cursor-pointer hover:opacity-80 transition-opacity">
+            <div className="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center text-white group-hover:scale-105 transition-transform">
               <Hexagon className="w-5 h-5 fill-current" />
             </div>
             <span className="text-xl font-bold tracking-tight text-gray-900">izi facture</span>
-          </div>
+          </Link>
         </div>
 
         <div className="bg-white border border-gray-200 shadow-sm rounded-2xl overflow-hidden p-1 sm:p-2">
