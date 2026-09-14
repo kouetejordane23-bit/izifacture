@@ -3,10 +3,11 @@
 import { useState } from "react"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { Menu, LayoutDashboard, Users, FileText, Settings, CreditCard } from "lucide-react"
+import { Menu, LayoutDashboard, Users, FileText, Settings, CreditCard, LogOut } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from "@/components/ui/sheet"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { logout } from "@/app/login/actions"
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
@@ -70,7 +71,7 @@ export function MobileNav() {
               })}
             </nav>
           </div>
-          <div className="border-t border-gray-200 p-4">
+          <div className="border-t border-gray-200 p-4 flex items-center justify-between">
             <div className="flex items-center">
               <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-500 font-medium">
                 JD
@@ -80,6 +81,11 @@ export function MobileNav() {
                 <p className="text-sm font-medium text-gray-500">Studio Arsa Digital</p>
               </div>
             </div>
+            <form action={logout}>
+              <button type="submit" className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-md transition-colors" title="Se déconnecter">
+                <LogOut className="w-5 h-5" />
+              </button>
+            </form>
           </div>
         </SheetContent>
       </Sheet>

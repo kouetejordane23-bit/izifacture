@@ -2,8 +2,9 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, Users, FileText, Settings, CreditCard, Layers } from "lucide-react"
+import { LayoutDashboard, Users, FileText, Settings, Layers, LogOut } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { logout } from "@/app/login/actions"
 
 const navigation = [
   { name: "Dashboard", href: "/dashboard", icon: LayoutDashboard },
@@ -58,22 +59,25 @@ export function Sidebar() {
           </nav>
         </div>
         
-        <div className="flex-shrink-0 flex p-4 m-4 border border-border rounded-2xl bg-muted/50 shadow-sm">
-          <button className="flex-shrink-0 w-full group block text-left">
-            <div className="flex items-center">
-              <div className="w-9 h-9 rounded-full bg-white border border-border flex items-center justify-center text-gray-600 font-semibold shadow-sm">
-                JD
-              </div>
-              <div className="ml-3">
-                <p className="text-sm font-semibold text-foreground">
-                  John Doe
-                </p>
-                <p className="text-xs font-medium text-muted-foreground">
-                  Studio Arsa Digital
-                </p>
-              </div>
+        <div className="flex-shrink-0 flex items-center justify-between p-4 m-4 border border-border rounded-2xl bg-muted/50 shadow-sm">
+          <div className="flex items-center">
+            <div className="w-9 h-9 rounded-full bg-white border border-border flex items-center justify-center text-gray-600 font-semibold shadow-sm">
+              JD
             </div>
-          </button>
+            <div className="ml-3">
+              <p className="text-sm font-semibold text-foreground">
+                John Doe
+              </p>
+              <p className="text-xs font-medium text-muted-foreground">
+                Studio Arsa Digital
+              </p>
+            </div>
+          </div>
+          <form action={logout}>
+            <button type="submit" className="p-2 text-muted-foreground hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors" title="Se déconnecter">
+              <LogOut className="w-5 h-5" />
+            </button>
+          </form>
         </div>
       </div>
     </div>

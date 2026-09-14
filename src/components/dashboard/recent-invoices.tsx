@@ -8,12 +8,12 @@ import {
 } from "@/components/ui/table"
 import { Card } from "@/components/ui/card"
 import { Skeleton } from "@/components/ui/skeleton"
-import { recentInvoicesData } from "@/lib/mock-data/dashboard"
 import { formatCurrency } from "@/lib/utils/format-currency"
 import { formatDate } from "@/lib/utils/dates"
 import { StatusBadge, InvoiceStatus } from "@/components/ui/status-badge"
 import { ArrowUpRight } from "lucide-react"
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function RecentInvoices({ invoices }: { invoices: any[] }) {
   return (
     <Card className="border border-gray-200 shadow-sm rounded-2xl bg-white overflow-hidden flex flex-col transition-all duration-300 hover:shadow-md">

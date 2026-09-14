@@ -22,6 +22,19 @@ const config = {
         sans: ["var(--font-sans)", ...fontFamily.sans],
       },
       colors: {
+        brand: {
+          50: '#fff5f2',
+          100: '#ffe8e2',
+          200: '#ffd1c5',
+          500: '#ff4d28',
+          600: '#f03a13',
+          700: '#c92c0a',
+        },
+        surface: {
+          50: '#FBFBFD',
+          100: '#F4F4F6',
+          200: '#EAEAEF',
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -61,6 +74,11 @@ const config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      boxShadow: {
+        'card': '0 20px 40px -15px rgba(0, 0, 0, 0.05), 0 0 1px 1px rgba(0, 0, 0, 0.04)',
+        'card-hover': '0 30px 60px -15px rgba(0, 0, 0, 0.1), 0 0 1px 1px rgba(0, 0, 0, 0.06)',
+        'cta': '0 12px 28px -6px rgba(240, 58, 19, 0.35)',
+      }
     },
   },
   plugins: [require("tailwindcss-animate")],
